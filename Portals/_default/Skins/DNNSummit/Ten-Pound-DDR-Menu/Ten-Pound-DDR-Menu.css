@@ -1,0 +1,8 @@
+.ten-pound-menu { margin: 0; padding: 0; }
+.ten-pound-menu ul { margin: 0; padding: 0; }
+.ten-pound-menu li { list-style: none; margin: 0; padding: 0; position: relative; }
+.ten-pound-menu a { cursor: pointer; display: block; text-decoration: none; }
+.ten-pound-menu .disabled { pointer-events: auto; }
+.ten-pound-menu .disabled > .text  { cursor: inherit; }
+.ten-pound-menu .sub { display: none; left: 0; position: absolute; z-index: 999; }
+.ten-pound-menu .sub .sub { top: 0; }

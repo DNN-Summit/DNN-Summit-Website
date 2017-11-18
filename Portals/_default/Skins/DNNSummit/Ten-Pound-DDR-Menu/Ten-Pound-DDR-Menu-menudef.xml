@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+	
+	<template>[MANIFEST]/Ten-Pound-DDR-Menu.xslt</template>
+	
+	<scripts>
+		<script>[MANIFEST]/Ten-Pound-DDR-Menu.js</script>
+	</scripts>
+	
+	<stylesheets>
+		<stylesheet>[MANIFEST]/Ten-Pound-DDR-Menu.css</stylesheet>
+	</stylesheets>
+	
+	<defaultClientOptions>
+		<clientOption type="string"				name="container"				value="window" />
+		<clientOption type="string"				name="subTrigger"				value="hover" />
+		<clientOption type="string"				name="subTriggerClass"			value="hover" />
+		<clientOption type="string"				name="animateIn"				value="slideDown" />
+		<clientOption type="string"				name="animateOut"				value="fade" />
+		<clientOption type="number"				name="showSpeed"				value="200" />
+		<clientOption type="number"				name="hideSpeed"				value="100" />
+		<clientOption type="boolean"			name="confine"					value="false" />
+		<clientOption type="boolean"			name="evenRoot"					value="false" />
+		<clientOption type="boolean"			name="pushContent"				value="false" />
+		<clientOption type="string"				name="pushContentSelector"		value="" />
+		<clientOption type="string"				name="mobileContainer"			value="" />
+		<clientOption type="string"				name="mobileOpenClass"			value="open" />
+		<clientOption type="string"				name="mobileOpeningClass"		value="opening" />
+		<clientOption type="string"				name="mobileClosedClass"		value="closed" />
+		<clientOption type="string"				name="mobileClosingClass"		value="closing" />
+		<clientOption type="number"				name="mobileShowSpeed"			value="200" />
+		<clientOption type="number"				name="mobileHideSpeed"			value="100" />
+		<clientOption type="boolean"			name="mobileSubMultiOpen"		value="false" />
+	</defaultClientOptions>
+	
+	<defaultTemplateArguments>
+		<templateArgument type="boolean"		name="mobile"					value="false" />
+		<templateArgument type="string"			name="mobileSeperateButton"		value="" />
+		<templateArgument type="string"			name="mobileButtonText"			value="Menu" />
+		<templateArgument type="string"			name="mobileButtonName"			value="-button" />
+		<templateArgument type="string"			name="mobileSubToggleClass"		value="toggle" />
+		<templateArgument type="string"			name="mobileSubToggleText"		value=">" />
+		<templateArgument type="string"			name="clearClass"				value="clearfix" />
+		<templateArgument type="boolean"		name="clearRoot"				value="true" />
+		<templateArgument type="boolean"		name="clearSub"					value="true" />
+		<templateArgument type="boolean"		name="showDesc"					value="false" />
+		<templateArgument type="boolean"		name="showKeywords"				value="false" />
+		<templateArgument type="boolean"		name="showIcon"					value="false" />
+		<templateArgument type="string"			name="menuId"					value=""	 />
+		<templateArgument type="string"			name="menuClass"				value="ten-pound-menu"	 />
+		<templateArgument type="string"			name="subClass"					value="sub" />
+		<templateArgument type="boolean"		name="showSubIndicator"			value="false" />
+		<templateArgument type="boolean"		name="subIndicatorClass"		value="indicator" />
+		<templateArgument type="string"			name="itemClass"				value="item" />
+		<templateArgument type="string"			name="rootClass"				value="root" />
+		<templateArgument type="string"			name="pageIDClass"				value="page-" />
+		<templateArgument type="string"			name="hasChildClass"			value="has-child" />
+		<templateArgument type="string"			name="numClass"					value="num-" />
+		<templateArgument type="string"			name="disabledClass"			value="disabled" />
+		<templateArgument type="string"			name="disabledSelected"			value="true" />
+		<templateArgument type="string"			name="firstClass"				value="first" />
+		<templateArgument type="string"			name="lastClass"				value="last" />
+		<templateArgument type="string"			name="onlyClass"				value="only" />
+		<templateArgument type="string"			name="bcClass"					value="bc" />
+		<templateArgument type="string"			name="selClass"					value="selected" />
+		<templateArgument type="string"			name="textClass"				value="text" />
+		<templateArgument type="string"			name="iconClass"				value="icon" />
+		<templateArgument type="string"			name="descClass"				value="desc" />
+		<templateArgument type="string"			name="keywordsClass"			value="keywords" />
+		<templateArgument type="string"			name="depthClass"				value="depth-" />
+		<templateArgument type="boolean"		name="useScript"				value="true" />
+	</defaultTemplateArguments>
+	
+</manifest>

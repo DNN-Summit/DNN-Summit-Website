@@ -1,0 +1,13 @@
+.custom-form-fields__radio .radio {
+    margin: 0 !important;
+    width: 25%;
+}
+.custom-form-fields__radio .radio label {
+    border: solid 1px #ccc;
+    background-color: #fcfcfc;
+    display: block;
+    line-height: 1em;
+    padding: 3em 1em;
+    text-align: center;
+    width: 100%;
+}
