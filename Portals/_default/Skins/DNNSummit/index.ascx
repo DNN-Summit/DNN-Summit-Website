@@ -25,15 +25,25 @@
 				<div class="row">
 					<div class="content-pane pane col-sm-12" id="ContentPane" runat="server" visible="false" />
 				</div>
-				<div class="row flex">
-					<div class="band-1-middle-1-pane pane col-sm-3" id="Band1Middle1Pane" runat="server" visible="false" />
-					<div class="band-1-middle-2-pane pane col-sm-3" id="Band1Middle2Pane" runat="server" visible="false" />
-					<div class="band-1-middle-3-pane pane col-sm-3" id="Band1Middle3Pane" runat="server" visible="false" />
-					<div class="band-1-middle-4-pane pane col-sm-3" id="Band1Middle4Pane" runat="server" visible="false" />
-				</div>	
+			</div>
+		</div>
+		<div class="banded">
+			<div class="container">
 				<div class="row">
-					<div class="content-bottom-pane pane col-sm-12" id="Band1BottomPane" runat="server" visible="false" />
-				</div>			
+					<div class="band-1-pane-1 pane col-sm-12" id="Band1Pane1" runat="server" visible="false" />
+				</div>
+			</div>
+		</div>
+		<div class="banded">
+				<div class="row">
+					<div class="band-1-pane-2 pane col-sm-12" id="Band1Pane2" runat="server" visible="false" />
+				</div>
+			</div>
+		</div>
+		<div class="banded">
+				<div class="row">
+					<div class="band-1-pane-3 pane col-sm-12" id="Band1Pane3" runat="server" visible="false" />
+				</div>
 			</div>
 		</div>
 

@@ -86,7 +86,8 @@
     ------------------------------------------------------------------------------------ */
     .dnnsummit-fullphoto h2 { margin-top: 0; text-align: left; }
 
-    .dnnsummit-fullphoto > div { display: table-cell; }
+    /* Removed this to fix padding issue on fullphoto right. not sure what it's original purpose was */
+    /*.dnnsummit-fullphoto > div { display: table-cell; }*/
     .dnnsummit-fullphoto .module-icon {
         background-position: center center;
         background-repeat: no-repeat;
