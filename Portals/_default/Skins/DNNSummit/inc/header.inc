@@ -26,4 +26,15 @@
 		</div>
 	</div>
 </header>
+
+<div class="sub-header sub-header--alert">
+	<div class="container">
+		<div class="col-sm-12 text-center">
+			<!-- <div class="sub-header__close"><span class="glyphicon glyphicon-remove"></span></div> -->
+			<h2 class="sub-header__title ts-h3"><strong>Register Now!</strong> Prices increase on January 6<sup>th</sup></h2>
+			<div class="sub-header__details">2 day pass will increase from $449 to $599 &amp; 2 day pass with full day training will increase from $679 to $829</div>
+		</div>
+	</div>
+</div>
+
 <!--<div class="cta-link container"><a class="cta-speakers" href="https://www.papercall.io/dnnsummit2018" target="_blank">Call for Speakers</a></div>-->

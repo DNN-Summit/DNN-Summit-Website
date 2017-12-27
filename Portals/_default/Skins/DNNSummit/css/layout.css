@@ -65,7 +65,9 @@ img { max-width: 100% !important; }
 /* ------------------------------------------------------------------------------------ 
 	#Type
 ------------------------------------------------------------------------------------ */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.ts-h1, .ts-h2, .ts-h3, .ts-h4, .ts-h5, .ts-h6 {
 	color: #1E345D;
 	font-family: 'Roboto Slab', serif;
 	font-weight: 300;
@@ -73,12 +75,12 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 }
 
-h1 { font-size: 53px; line-height: 62px; margin-bottom: 35px; }
-h2 { font-size: 46px; line-height: 51px; }
-h3 { font-size: 40px; line-height: 44px; }
-h4 { font-size: 35px; line-height: 39px; }
-h5 { font-size: 30px; line-height: 36px; }
-h6 { font-size: 28px; line-height: 34px; }
+h1, .h1, .ts-h1 { font-size: 53px; line-height: 62px; margin-bottom: 35px; }
+h2, .h2, .ts-h2 { font-size: 46px; line-height: 51px; }
+h3, .h3, .ts-h3 { font-size: 40px; line-height: 44px; }
+h4, .h4, .ts-h4 { font-size: 35px; line-height: 39px; }
+h5, .h5, .ts-h5 { font-size: 30px; line-height: 36px; }
+h6, .h6, .ts-h6 { font-size: 28px; line-height: 34px; }
 
 
 /* Styles */

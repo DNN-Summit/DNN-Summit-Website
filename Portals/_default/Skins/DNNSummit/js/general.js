@@ -151,7 +151,9 @@ jQuery('document').ready(function($){
 	});
 */
 
-
+	if ( $('.sub-header--alert').length > 0 ){
+		$('.sub-header--alert').delay(1000).slideDown();
+	}
 
 
 	
