@@ -1,0 +1,30 @@
+@Edit.Toolbar(actions: "new", contentType: "Packages")
+<div class="price-table">
+    @foreach(var cont in AsDynamic(App.Data["Packages"])){
+        decimal displayPrice = 1000;
+        foreach(var priceItem in @cont.Prices){
+            if( priceItem.Title == "Default" ){
+                displayPrice = priceItem.Price;
+            }
+            if( DateTime.Now.CompareTo(priceItem.StartDate) >= 0 && DateTime.Now.CompareTo(priceItem.EndDate) <= 0 ){
+                displayPrice = priceItem.Price;
+                <!--<h6>@priceItem.Title</h6>-->
+                break;
+            }
+        }
+        
+        <div class="price-table__item">
+            <div class="price-table__title">@Edit.Toolbar(cont, actions: "edit")@cont.Title</div>
+            <div class="price-table__price">$@displayPrice</div>
+            <div class="price-table__details">
+                @cont.Summary
+                
+                <ul>
+                    @foreach(var feature in @cont.Features){
+                        <li>@feature.Text</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>

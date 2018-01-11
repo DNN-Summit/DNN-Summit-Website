@@ -1,0 +1,103 @@
+@Edit.Toolbar(actions: "new", contentType: "Sessions")
+@{
+	String lastDay = "";
+	String lastTime = "";
+	var days = AsDynamic(App.Data["Sessions"]).OrderBy(t => t.TimeSlot);
+}
+<div class="sessions">
+	@foreach(var cont in days){
+		
+		if(lastDay != cont.Day){
+		    <h3>@cont.Day</h3>
+		}
+		if(lastTime != cont.TimeSlot){
+
+			<h6 class="session__time">
+				Session @cont.TimeSlot:
+				<span class="break-text">
+				    @*
+				    @switch(cont.TimeSlot){
+				        case "1":
+				            <text>12:40 — 1:40</text>
+				            break;
+				        default:
+				            <text>Blah!</text>
+				    }
+				    *@
+				</span>
+			</h6>
+		}
+	
+	
+		String catClass = "zero";
+		
+		if(cont.Category == "UX Dev"){ catClass = "one"; }
+		else if (cont.Category == "Development"){ catClass = "two"; }
+		else if (cont.Category == "Integration"){ catClass = "three"; }
+		else if (cont.Category == "Marketing"){ catClass = "four"; }
+		else if (cont.Category == "DNN"){ catClass = "five"; }
+		else { catClass = "one"; }
+
+		<div class="session__item cat-@catClass" id="session-@cont.Title.ToLower().Replace(' ','-')">
+			<a class="session-more-btn"></a>
+
+			<!-- Category -->
+			<div class="session__category">
+				<div class="session__category--box">
+					<div class="cat--box-name">@cont.Category</div>
+				</div>
+			</div>
+
+			<!-- Info -->
+			<div class="session__info">
+				
+				<!-- Title -->
+				<h5 class="session-title">@Edit.Toolbar(cont, actions: "edit") @cont.Title</h5>
+				
+				<!-- Location -->
+				<p class="session-room">Room 102</p>
+
+				@if (cont.Speaker.Count > 0){
+					<div class="session__author">
+						<div class="session__author__img">
+							<img alt="@cont.Speaker[0].Name" src="@cont.Speaker[0].Photo">
+						</div>
+						
+						<!-- Name -->
+						<p>
+							@if(cont.Speaker.Count >= 1){
+								foreach(var item in cont.Speaker){
+									@item.Name
+								}
+							} else if(cont.Speaker.Count == 1){
+								@cont.Speaker[0].Name
+							}
+						</p>
+						<a class="session-bio-link" href="/Denver-2018/Speakers#speaker-@cont.Speaker[0].Name.ToLower().Replace(' ','-')">
+						</a>
+						
+						<!-- Video -->
+						<!--<a class="session__author__video" href="https://www.youtube.com/embed/fbF_9nlzW7E?rel=0&amp;autoplay=1">-->
+						<!--    <span class="fa-stack">-->
+						<!--        <em class="fa fa-square fa-stack-2x text-primary">-->
+						<!--        </em>-->
+						<!--        <em class="fa fa-play fa-stack-1x fa-inverse">-->
+						<!--        </em>-->
+						<!--    </span> Interview with Ralph Williams-->
+						<!--</a>-->
+					</div>
+				}
+				
+			</div>
+
+			<!-- Description -->
+			<div class="session__description">
+				<p>@cont.Description</p>
+			</div>
+
+		</div>
+
+		lastTime = cont.TimeSlot;
+		lastDay = cont.Day;
+	}
+</div>

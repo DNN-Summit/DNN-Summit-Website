@@ -1,0 +1,46 @@
+@Edit.Toolbar(actions: "new", contentType: "Speakers")
+<div class="speaker-list testing">
+	@foreach(var cont in AsDynamic(App.Data["Speakers"]).OrderBy(t => t.Name)){
+		<div class="speaker-item" id="speaker-@cont.Name.ToLower().Replace(' ','-')">
+			@if( !String.IsNullOrEmpty(@cont.Photo) ){
+    			<div class="speaker-item__photo" style="background-image: url('@cont.Photo');"></div>
+    		}
+			<h4 class="speaker-item__name">
+			    @Edit.Toolbar(cont, actions: "edit")
+				@cont.Name
+			    @if( !String.IsNullOrEmpty(@cont.Twitter) ){
+				    <a href="https://twitter.com/@cont.Twitter" target="_new">
+					    <span class="speaker-item__twitter"></span>
+				    </a>
+			    }
+			</h4>
+
+			@* Bio *@
+			<div class="speaker-item__bio" style="white-space: pre-wrap">
+				<p>@cont.Bio</p>
+			</div>
+			<a class="more"></a>
+
+			@* Sessions *@
+			@if( @cont.Sessions.Count > 0 ){
+			    <ul class="speaker-item__sessions">
+				    @foreach(var item in @cont.Sessions){
+					    <li>
+						    @* <a href="/Denver-2018/Sessions#session-@cont.Name.ToLower().Replace(' ','-')"> *@
+    							@item.Title
+	    						@if( !String.IsNullOrEmpty(@item.VideoLink) ){
+		    					    <a class="speaker-item__video" href="@item.VideoLink" target="_blank">
+		    					        <span class="fa-stack">
+		    					            <em class="fa fa-square fa-stack-2x"></em>
+		    					            <em class="fa fa-play fa-stack-1x fa-inverse"></em>
+		    					        </span>
+		    					    </a>
+			    				}
+				    		@* </a> *@
+					    </li>
+				    }
+			    </ul>
+			}
+		</div>
+	}
+</div>
