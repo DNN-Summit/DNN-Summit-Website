@@ -2,28 +2,35 @@
 @{
 	String lastDay = "";
 	String lastTime = "";
-	var days = AsDynamic(App.Data["Sessions"]).OrderBy(t => t.TimeSlot);
+	var days = AsDynamic(App.Data["Sessions"]).OrderBy(d => d.Day).ThenBy(t => t.TimeSlot).ThenBy(c => c.Category);
+	int i = 0;
 }
 <div class="sessions">
 	@foreach(var cont in days){
-		
+
 		if(lastDay != cont.Day){
-		    <h3>@cont.Day</h3>
+		    <h2 class="quaternary-text-color text-center">Day @cont.Day</h2>
 		}
 		if(lastTime != cont.TimeSlot){
+			if(@cont.TimeSlot == "1"){
+				<h6 class="session__time">Breakfast/ Welcome / Announcements / Keynote:<span class="break-text">8:00 (Andy Tryba, CEO, DNN Corp.)</span></h6>
+			}
+			if(@cont.TimeSlot == "3"){
+				<h6 class="session__time">Lunch:<span class="break-text">11:30 - 12:30</span></h6>
+			}
+			if(@cont.TimeSlot == "5"){
+				<h6 class="session__time">Break:<span class="break-text">3:00 - 3:10</span></h6>
+			}
 
 			<h6 class="session__time">
 				Session @cont.TimeSlot:
 				<span class="break-text">
-				    @*
-				    @switch(cont.TimeSlot){
-				        case "1":
-				            <text>12:40 — 1:40</text>
-				            break;
-				        default:
-				            <text>Blah!</text>
-				    }
-				    *@
+					@if(@cont.TimeSlot == "1"){ <text>9:10 — 10:10</text> }
+					else if(@cont.TimeSlot == "2"){ <text>10:20 — 11:20</text> }
+					else if(@cont.TimeSlot == "3"){ <text>12:40 — 1:40</text> }
+					else if(@cont.TimeSlot == "4"){ <text>1:50 — 2:50</text> }
+					else if(@cont.TimeSlot == "5"){ <text>3:20 — 4:20</text> }
+				    
 				</span>
 			</h6>
 		}
@@ -99,5 +106,10 @@
 
 		lastTime = cont.TimeSlot;
 		lastDay = cont.Day;
+		i++;
+
+		if(lastDay == "2" && days.Count() == i){
+			<h6 class="session__time">Closing Session:<span class="break-text">16:30 - 17:30 (Shaun Walker, Founder, DNN Corp.)</span></h6>
+		}
 	}
 </div>

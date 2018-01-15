@@ -1077,6 +1077,7 @@
 	font-weight: 300;
 	line-height: 27px;
 	margin-bottom: 26px;
+	white-space: pre-wrap;
 }
 .session__description ol,
 .session__description ul { margin-bottom: 26px; }
