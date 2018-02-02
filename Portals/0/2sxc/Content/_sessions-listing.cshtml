@@ -9,7 +9,7 @@
 	@foreach(var cont in days){
 
 		if(lastDay != cont.Day){
-		    <h2 class="quaternary-text-color text-center">Day @cont.Day</h2>
+		    <h2 class="quaternary-text-color text-center">Day @(int.Parse(cont.Day) + 1)</h2>
 		}
 		if(lastTime != cont.TimeSlot){
 			if(@cont.TimeSlot == "1"){
