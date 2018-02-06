@@ -62,19 +62,34 @@
 				<h5 class="session-title">@Edit.Toolbar(cont, actions: "edit") @cont.Title</h5>
 				
 				<!-- Location -->
-				<p class="session-room">Room 102</p>
+				<p class="session-room">@cont.Room</p>
 
 				@if (cont.Speaker.Count > 0){
 					<div class="session__author">
-						<div class="session__author__img">
-							<img alt="@cont.Speaker[0].Name" src="@cont.Speaker[0].Photo">
-						</div>
+
+						<!-- Image -->
+						@if(cont.Speaker.Count >= 1){
+							foreach(var item in cont.Speaker){
+								<div class="session__author__img">
+									<img alt="@item.Name" src="@item.Photo">
+								</div>
+							}
+						} else if(cont.Speaker.Count == 1){
+							<div class="session__author__img">
+								<img alt="@cont.Speaker[0].Name" src="@cont.Speaker[0].Photo">
+							</div>
+						}
+
 						
 						<!-- Name -->
 						<p>
-							@if(cont.Speaker.Count >= 1){
+							@if(cont.Speaker.Count > 1){
+								int i2 = 1;
 								foreach(var item in cont.Speaker){
+									if(i2 == cont.Speaker.Count){ <text> &amp </text> }
 									@item.Name
+									if(i2 < cont.Speaker.Count){ <text>, </text> }
+									i2++;
 								}
 							} else if(cont.Speaker.Count == 1){
 								@cont.Speaker[0].Name
