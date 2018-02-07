@@ -12,7 +12,7 @@
 		    <h2 class="quaternary-text-color text-center">Day @(int.Parse(cont.Day) + 1)</h2>
 		}
 		if(lastTime != cont.TimeSlot){
-			if(@cont.TimeSlot == "1"){
+			if(@cont.TimeSlot == "1" && @cont.Day == "1"){
 				<h6 class="session__time">Breakfast/ Welcome / Announcements / Keynote:<span class="break-text">8:00 (Andy Tryba, CEO, DNN Corp.)</span></h6>
 			}
 			if(@cont.TimeSlot == "3"){
